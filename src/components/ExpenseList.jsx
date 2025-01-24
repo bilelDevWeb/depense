@@ -7,9 +7,13 @@ const ExpenseList = () => {
 
   return (
     <div>
-      {state.expenses.map((expense) => (
-        <ExpenseItem key={expense.id} expense={expense} />
-      ))}
+      {state.expenses.length > 0 ? (
+        state.expenses.map((expense) => (
+          <ExpenseItem key={expense.id} expense={expense} />
+        ))
+      ) : (
+        <p>Aucune dépense enregistrée.</p>
+      )}
     </div>
   );
 };
